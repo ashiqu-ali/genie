@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:genie/pages/home_page.dart';
 import 'package:genie/pages/signin_page.dart';
 import 'package:genie/pages/signup_page.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'genie',
       debugShowCheckedModeBanner: false,
-      home: SignUpPage(),
+      home: HomePage(),
     );
   }
 }

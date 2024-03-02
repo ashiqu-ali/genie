@@ -27,6 +27,17 @@ TextStyle button = GoogleFonts.poppins(
     fontSize: 18,
     fontStyle: FontStyle.normal
 );
+TextStyle userName = GoogleFonts.poppins(
+    color: Colors.black,
+    fontSize: medium,
+    fontWeight: FontWeight.w500
+);
+TextStyle chatStyle = GoogleFonts.poppins(
+    color: Colors.black45,
+    fontSize: small,
+    fontWeight: FontWeight.w500
+);
+
 
 //sizes
 double xsmall = 10.0;
