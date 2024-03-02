@@ -103,7 +103,7 @@ class _SignInPageState extends State<SignInPage> {
                                 child: TextButton(
                                   onPressed: () {},
                                   child: Text(
-                                    "Forgot Passsword",
+                                    "Forgot Password",
                                     style: heading3,
                                   ),
                                 ),
