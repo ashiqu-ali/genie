@@ -1,6 +1,6 @@
 # Genie Chat App
 
-Genie Chat App is a Flutter project that focuses on user authentication with login and signup functionality, powered by Firebase and Firestore. This project is designed to create a secure and feature-rich mobile application, inspired by the structure of the Gemini Chat App.
+Genie chat app is a Flutter project which is designing for effortless messaging. It provides a smooth and intuitive chat interface for real-time communication. Developed with Flutter, Firebase, and Firestore, it delivers a seamless and feature-rich messaging experience.
 
 ## Features
 
@@ -18,7 +18,7 @@ To run the app locally, follow these steps:
    git clone https://github.com/your-username/genie-chat-app.git
 ```
 
-## Install Dependencies
+2. Install Dependencies
 
 To install the required dependencies for the Genie Chat App, use the following command:
 
@@ -26,7 +26,7 @@ To install the required dependencies for the Genie Chat App, use the following c
 flutter pub get
 ```
 
-## Run the app
+3. Run the app
 
 ```bash
 flutter run
