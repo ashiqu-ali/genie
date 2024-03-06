@@ -44,4 +44,6 @@ Make sure to include these dependencies in your `pubspec.yaml` file:
 
 
 # Contributors
-[Ashiqu Ali](https://github.com/ashiqu-ali)
+- [**Ashiqu Ali**](https://github.com/ashiqu-ali)
+
+Feel free to contribute to this project by opening issues and pull requests. Happy coding!
