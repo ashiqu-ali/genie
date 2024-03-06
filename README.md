@@ -1,16 +1,47 @@
-# genie
+# Genie Chat App
 
-A new Flutter project.
+Genie Chat App is a Flutter project that focuses on user authentication with login and signup functionality, powered by Firebase and Firestore. This project is designed to create a secure and feature-rich mobile application, inspired by the structure of the Gemini Chat App.
+
+## Features
+
+- **User Authentication:** Allows users to sign up and log in securely.
+- **Firebase Integration:** Utilizes Firebase for user authentication and data storage.
+- **Firestore Database:** Stores user data and facilitates seamless data retrieval.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To run the app locally, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone the repository:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+   git clone https://github.com/your-username/genie-chat-app.git
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Install Dependencies
+
+To install the required dependencies for the Genie Chat App, use the following command:
+
+```bash
+flutter pub get
+```
+
+## Run the app
+
+```bash
+flutter run
+```
+
+## Dependencies
+
+The Genie Chat App relies on the following Flutter packages for its functionality:
+
+- **flutter/material.dart:** Flutter framework for building the UI.
+- **firebase_auth:** Firebase Authentication package for user authentication.
+- **cloud_firestore:** Firestore package for interacting with the Firestore database.
+
+Make sure to include these dependencies in your `pubspec.yaml` file:
+
+
+Contributors
+[Ashiqu Ali](https://github.com/ashiqu-ali)

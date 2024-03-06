@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:genie/utils/style.dart';
 
 class HomePage extends StatefulWidget {
@@ -42,6 +41,7 @@ class _HomePageState extends State<HomePage> {
                     const Icon(CupertinoIcons.person_alt_circle, size: 60),
                     SizedBox(width: xsmall),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("Ashiqu Ali", style: userName),
                         Text("Hey There", style: chatStyle),
