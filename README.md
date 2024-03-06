@@ -43,5 +43,5 @@ The Genie Chat App relies on the following Flutter packages for its functionalit
 Make sure to include these dependencies in your `pubspec.yaml` file:
 
 
-Contributors
+# Contributors
 [Ashiqu Ali](https://github.com/ashiqu-ali)
