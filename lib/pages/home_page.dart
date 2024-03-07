@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     const Icon(CupertinoIcons.person_alt_circle, size: 60),
                     SizedBox(width: xsmall),
@@ -46,12 +46,30 @@ class _HomePageState extends State<HomePage> {
                         Text("Ashiqu Ali", style: userName),
                         Text("Hey There", style: chatStyle),
                       ],
-                    )
+                    ),
+                    const Spacer(),
+                    Text("04:32", style: chatStyle)
                   ],
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const Icon(CupertinoIcons.person_alt_circle, size: 60),
+                    SizedBox(width: xsmall),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Ashiqu Ali", style: userName),
+                        Text("Hey There", style: chatStyle),
+                      ],
+                    ),
+                    const Spacer(),
+                    Text("04:32", style: chatStyle)
+                  ],
+                )
               ],
             ),
-          )
+          ),
         ],
       ),
     );
