@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:genie/components/chat_tile.dart';
 import 'package:genie/utils/style.dart';
 
 class HomePage extends StatefulWidget {
@@ -33,40 +34,9 @@ class _HomePageState extends State<HomePage> {
               color: white,
               borderRadius: BorderRadius.only(topLeft: Radius.circular(medium), topRight: Radius.circular(medium)),
             ),
-            child: Column(
+            child: const Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Icon(CupertinoIcons.person_alt_circle, size: 60),
-                    SizedBox(width: xsmall),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Ashiqu Ali", style: userName),
-                        Text("Hey There", style: chatStyle),
-                      ],
-                    ),
-                    const Spacer(),
-                    Text("04:32", style: chatStyle)
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Icon(CupertinoIcons.person_alt_circle, size: 60),
-                    SizedBox(width: xsmall),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Ashiqu Ali", style: userName),
-                        Text("Hey There", style: chatStyle),
-                      ],
-                    ),
-                    const Spacer(),
-                    Text("04:32", style: chatStyle)
-                  ],
-                )
+                ChatTile(userName: "Ashiqu Ali", lastMessage: "Hey there", time: "04:44PM")
               ],
             ),
           ),
