@@ -20,36 +20,45 @@ class _ChatScreenState extends State<ChatScreen> {
       // backgroundColor: primary1,
       appBar: const MyAppBar(username: 'Ashiqu Ali',),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Padding(
+          const Messages(isUser: true, message: "hey", date: "10:23"),
+          const Messages(isUser: false, message: "Hello", date: "10:24"),
+          const Spacer(),
+           Padding(
             padding: const EdgeInsets.symmetric(horizontal: medium, vertical: small),
             child: Expanded(
               flex: 20,
-              child: TextFormField(
-                maxLines: 6,
-                minLines: 1,
-                controller: _userMessage,
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.fromLTRB(medium, 0, small, 0),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(xlarge),
-                  ),
-                  hintText: 'Type a message',
-                  hintStyle: hintText,
-                  suffixIcon: GestureDetector(
-                    onTap: () {
+              child: Material(
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(30.0),
+                child: TextFormField(
+                  maxLines: 6,
+                  minLines: 1,
+                  controller: _userMessage,
+                  decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.fromLTRB(medium, 0, small, 0),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(xlarge),
+                      borderSide: BorderSide.none
+                    ),
+                    hintText: 'Type a message',
+                    hintStyle: hintText,
+                    suffixIcon: GestureDetector(
+                      onTap: () {
 
-                    },
-                    child: Icon(
-                      Icons.arrow_upward,
-                      color: _userMessage.text.isNotEmpty ? Colors.white : const Color(0x5A6C6C65),
+                      },
+                      child: Icon(
+                        Icons.arrow_upward,
+                        color: _userMessage.text.isNotEmpty ? Colors.white : const Color(0x5A6C6C65),
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
-          )
+                     ),
+
         ],
       ),
     );

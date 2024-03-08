@@ -20,18 +20,18 @@ class Messages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(small),
-      margin: EdgeInsets.symmetric(vertical: small).copyWith(
-        left: isUser ? 100 : xsmall,
-        right: isUser ? xsmall : 100,
+      padding: const EdgeInsets.all(small),
+      margin: const EdgeInsets.symmetric(vertical: small).copyWith(
+        left: isUser ? 150 : xsmall,
+        right: isUser ? xsmall : 150,
       ),
       decoration: BoxDecoration(
         color: isUser ? userChat : resChat,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(xsmall),
-          bottomLeft: isUser ? Radius.circular(xsmall) : Radius.zero,
-          topRight: Radius.circular(xsmall),
-          bottomRight: !isUser ? Radius.circular(xsmall) : Radius.zero,
+          topLeft: const Radius.circular(xsmall),
+          bottomLeft: isUser ? const Radius.circular(xsmall) : Radius.zero,
+          topRight: const Radius.circular(xsmall),
+          bottomRight: !isUser ? const Radius.circular(xsmall) : Radius.zero,
         ),
       ),
       child: Column(
@@ -42,10 +42,10 @@ class Messages extends StatelessWidget {
               style: messageText,
             ),
           Row(
-            mainAxisAlignment: isUser ? MainAxisAlignment.start : MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(
-                "\n$date",
+                "$date",
                 style: dateText,
               ),
             ],

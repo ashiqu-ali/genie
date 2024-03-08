@@ -6,9 +6,11 @@ Color background = const Color(0xFFF9F7F3);
 Color primary1 = const Color(0xFF7f30fe);
 Color primary2 =const Color(0xFF6380fb);
 Color white = const Color(0xFFFFFFFF);
-Color userChat = const Color(0xFF1A80E5);
-Color resChat = const Color(0xFF243647);
+Color chatColor = const Color.fromARGB(255, 211, 228, 243);
 Color hintColor = const Color(0xFF47698A);
+Color black = Colors.black;
+Color resChat = const Color.fromARGB(255, 211, 228, 243);
+Color userChat = const Color.fromARGB(255, 234, 236, 240);
 
 
 //TextStyle
@@ -41,12 +43,12 @@ TextStyle chatStyle = GoogleFonts.poppins(
     fontSize: small,
     fontWeight: FontWeight.w500
 );
-TextStyle messageText = GoogleFonts.poppins(color: white, fontSize: small);
-TextStyle dateText = GoogleFonts.poppins(color: white, fontSize: 13);
+TextStyle messageText = GoogleFonts.poppins(color: black, fontSize: small);
+TextStyle dateText = GoogleFonts.poppins(color: black, fontSize: 13);
 TextStyle hintText = GoogleFonts.poppins(color: hintColor, fontSize: small);
 
 //sizes
-const double xsmall = 10.0;
+const double xsmall = 15.0;
 const double small = 15.0;
 const double medium = 20.0;
 const double large = 30.0;
