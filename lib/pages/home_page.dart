@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: primary1,
       appBar: AppBar(
-        title: Text('Genie', style: heading1,),
+        title: Text('Genie', style: heading1),
         backgroundColor: primary1,
         actions: [
           IconButton(onPressed: (){}, icon: Icon(Icons.search_sharp, color: white,))
