@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:genie/pages/chat_screen.dart';
-import 'package:genie/pages/home_page.dart';
-import 'package:genie/pages/signin_page.dart';
 import 'package:genie/pages/signup_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-main(){
+main() async{
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'genie',
       debugShowCheckedModeBanner: false,
-      home: ChatScreen(),
+      home: SignUpPage(),
     );
   }
 }

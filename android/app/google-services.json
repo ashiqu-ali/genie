@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "678415324438",
+    "project_id": "chat-app-822e1",
+    "storage_bucket": "chat-app-822e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678415324438:android:f39379fe5f3dbf2291ac37",
+        "android_client_info": {
+          "package_name": "com.example.genie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG8WuG5b-MO9tmTyyi08B8MH_xshrPUyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
