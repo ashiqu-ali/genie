@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:genie/services/database.dart';
+import 'package:random_string/random_string.dart';
 
 import '../utils/style.dart';
 
@@ -24,7 +26,16 @@ class _SignUpPageState extends State<SignUpPage> {
     if(password!=null && password == confirmPassword){
       try{
        UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
-       final user = userCredential.user;
+       String Id =randomAlphaNumeric(10);
+       List<String> parts = email.split("@");
+       Map<String, dynamic>userInfoMap = {
+         "Name" : name,
+         "Mail" : email,
+         "username" : parts[0],
+         "photos" : "https://norrismgmt.com/wp-content/uploads/2020/05/24-248253_user-profile-default-image-png-clipart-png-download.png",
+         "Id" : Id
+       };
+       await DatabaseMethods().addUserDetails(userInfoMap, Id);
        ScaffoldMessenger.of(context).showSnackBar((const SnackBar(content: Text("Succesfully Registered", style: TextStyle(fontSize: 20.0),),)));
        
       }on FirebaseAuthException catch(e){
