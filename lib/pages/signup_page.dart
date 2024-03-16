@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:genie/pages/home_page.dart';
 import 'package:genie/services/database.dart';
+import 'package:genie/services/shared_pref.dart';
 import 'package:random_string/random_string.dart';
 
 import '../utils/style.dart';
@@ -25,20 +27,27 @@ class _SignUpPageState extends State<SignUpPage> {
   void _register() async{
     if(password!=null && password == confirmPassword){
       try{
-       UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
-       String Id =randomAlphaNumeric(10);
+       String id =randomAlphaNumeric(10);
        List<String> parts = email.split("@");
        Map<String, dynamic>userInfoMap = {
-         "Name" : name,
-         "Mail" : email,
+         "name" : name,
+         "mail" : email,
          "username" : parts[0],
          "photos" : "https://norrismgmt.com/wp-content/uploads/2020/05/24-248253_user-profile-default-image-png-clipart-png-download.png",
-         "Id" : Id
+         "id" : id
        };
-       await DatabaseMethods().addUserDetails(userInfoMap, Id);
+       await DatabaseMethods().addUserDetails(userInfoMap, id);
+
+       //Shared Preferences
+       await SharedPreferenceHelper().saveUserId(id);
+       await SharedPreferenceHelper().saveUserName(parts[0]);
+       await SharedPreferenceHelper().saveDisplayName(name);
+       await SharedPreferenceHelper().saveUserEmail(email);
+       await SharedPreferenceHelper().saveUserPic("https://norrismgmt.com/wp-content/uploads/2020/05/24-248253_user-profile-default-image-png-clipart-png-download.png");
+
 
        ScaffoldMessenger.of(context).showSnackBar((const SnackBar(content: Text("Succesfully Registered", style: TextStyle(fontSize: 20.0),),)));
-       
+       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage()));
       }on FirebaseAuthException catch(e){
         if(e.code=='weak-password'){
           ScaffoldMessenger.of(context).showSnackBar((const SnackBar(content: Text("Given Password is too weak",style: TextStyle(fontSize: 18.0),),)));
@@ -204,7 +213,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                     if (value!.isEmpty) {
                                       return 'Confirm password Empty';
                                     }
-                                    else if(value != _passwordController){
+                                    else if(value != _passwordController.text){
                                       return 'Password doesn\'t match';
                                     }
                                     return null;
@@ -216,12 +225,22 @@ class _SignUpPageState extends State<SignUpPage> {
                                   height: 50,
                                   width: width / 1.5,
                                   child: ElevatedButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      if(_formkey.currentState!.validate()){
+                                        setState(() {
+                                          email = _mailController.text;
+                                          name = _nameController.text;
+                                          password = _passwordController.text;
+                                          confirmPassword = _confirmPassController.text;
+                                          _register();
+                                        });
+                                      }
+                                    },
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: primary1,
                                     ),
                                     child: Text(
-                                      'Sign In',
+                                      'Sign Up',
                                       style: button,
                                     ),
                                   ),
@@ -233,15 +252,6 @@ class _SignUpPageState extends State<SignUpPage> {
                                         style: TextStyle(fontSize: small)),
                                     TextButton(
                                       onPressed: () {
-                                        if(_formkey.currentState!.validate()){
-                                          setState(() {
-                                            email = _mailController.text;
-                                            name = _nameController.text;
-                                            password = _passwordController.text;
-                                            confirmPassword = _confirmPassController.text;
-                                          });
-                                        }
-                                        _register();
                                       },
                                       child: const Text('Sign In'),
                                     )
