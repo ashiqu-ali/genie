@@ -65,4 +65,7 @@ flutter {
     source '../..'
 }
 
-dependencies {}
+dependencies {
+    implementation "com.google.firebase:firebase-firestore:24.2.0"
+}
+

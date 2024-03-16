@@ -36,6 +36,7 @@ class _SignUpPageState extends State<SignUpPage> {
          "Id" : Id
        };
        await DatabaseMethods().addUserDetails(userInfoMap, Id);
+
        ScaffoldMessenger.of(context).showSnackBar((const SnackBar(content: Text("Succesfully Registered", style: TextStyle(fontSize: 20.0),),)));
        
       }on FirebaseAuthException catch(e){
